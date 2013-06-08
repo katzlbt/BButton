@@ -1,5 +1,4 @@
 .DS_Store
-.gitignore
 
 # Xcode
 build/*
@@ -22,3 +21,5 @@ DerivedData
 
 BButton/resources/icomoon.ttf
 
+
+.gitignore~
