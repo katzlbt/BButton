@@ -18,7 +18,7 @@
  Example:
  + inizialize //(E.g. App Delegate or any other main class)
  {
-    [BBIconLabel setTextToIconMap:[NSDictionary dictionaryWithObjectsAndKeys:"#FAIconRemove", FAIconRemove, nil]];
+    [BBIconLabel setTextToIconMap:[NSDictionary dictionaryWithObjectsAndKeys: FAIconRemove, "#IL1", nil]];
  }
  */
 + (void) setTextToIconMap:(NSDictionary*)map;

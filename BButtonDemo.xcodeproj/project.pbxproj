@@ -130,11 +130,11 @@
 				4EB4E7881763068300ADA064 /* FontAwesomeIcons.h */,
 				880EED99170B357400462214 /* BButton.h */,
 				880EED9A170B357400462214 /* BButton.m */,
+				4EE3486F17635C5600F59402 /* BBIconLabel.h */,
+				4EE3487017635C5600F59402 /* BBIconLabel.m */,
 				880EEDA0170B3EDB00462214 /* UIColor+BButton.h */,
 				880EEDA1170B3EDB00462214 /* UIColor+BButton.m */,
 				880EED9B170B357400462214 /* resources */,
-				4EE3486F17635C5600F59402 /* BBIconLabel.h */,
-				4EE3487017635C5600F59402 /* BBIconLabel.m */,
 			);
 			path = BButton;
 			sourceTree = "<group>";

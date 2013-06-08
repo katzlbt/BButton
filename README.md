@@ -4,10 +4,10 @@ BButton is a subclass of UIButton that looks like the [Twitter Bootstrap 2.3.1](
 BBIconLabel is a new class to display Icons without button. With a single method call it can be set up to convert entered text in InterfaceBuilder to Icons and scale them. No need to write code.
 
 ### Changes
-* Refactored to be able to use Icomoon Font in Buttons.
+* Refactored to be able to use Icomoon Font or any other Font in Buttons.
 * Switched from Arrays to memory friendier #define structure.
 * Deprecated NSString extensions
-* TODO: Draw icon separately of text as this thinns the label font from bold to regular.
+* TODO: Draw icon separately of text as this thinns the label font from bold to regular (and loose the ability to display 2+ icons?)
 * Addedd BBIconLabel class
 
 #BButton 2.0
@@ -29,12 +29,6 @@ Includes [@leberwurstsaft / FontAwesome-for-iOS](https://github.com/leberwurstsa
 * FontAwesome already included
 * Refactored to be much cleaner, better organized
 
-## Installation
-
-### From [CocoaPods](http://www.cocoapods.org)
-
-	pod `BButton`
-
 ### From source
 
 * Drag the `BButton/` folder to your project (make sure you copy all files/folders)
@@ -51,6 +45,9 @@ Create a `UIButton` and change its class to `BButton`
 
 <img width=261 src="http://img827.imageshack.us/img827/6596/ibbbutton.png"/>
 
+Create a `UILabel` and change its class to `BBIconLabel` Then add a method to translate the text you set in IB as label text to icons.
+[BBIconLabel setTextToIconMap:[NSDictionary dictionaryWithObjectsAndKeys: FAIconRemove, "#IL1", nil]];
+ 
 ### Create programmatically
 
 **See the included demo project `BButtonDemo.xcodeproj`**
