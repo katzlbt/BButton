@@ -82,12 +82,12 @@ void BButton_listFonts(); // Add yourfont.ttf to application-info.plist with key
 - (id)initWithFrame:(CGRect)frame color:(UIColor *)aColor;
 - (id)initWithFrame:(CGRect)frame color:(UIColor *)aColor icon:(NSString *)iconString fontSize:(CGFloat)fontSize;
 
-+ (BButton *)awesomeButtonWithOnlyIcon:(NSString *)iconString type:(BButtonType)type;
-+ (BButton *)awesomeButtonWithOnlyIcon:(NSString *)iconString color:(UIColor *)color;
++ (BButton *)buttonWithOnlyIcon:(NSString *)iconString type:(BButtonType)type;
++ (BButton *)buttonWithOnlyIcon:(NSString *)iconString color:(UIColor *)color;
 
 #pragma mark - BButton
 - (void)setType:(BButtonType)type;
-- (void)addAwesomeIcon:(NSString *)iconString beforeTitle:(BOOL)before;
+- (void)addIcon:(NSString *)iconString beforeTitle:(BOOL)before;
 
 @end
 

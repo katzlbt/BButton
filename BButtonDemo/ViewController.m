@@ -36,9 +36,8 @@
 {
     [super viewDidLoad];
     
-    //[self demoFontAwesome];
+    [self demoFontAwesome];
     // MUST PROVIDE YOUR OWN TTF FILE! [self demoIcomoon];
-    [self demoIcomoon];
 }
 
 - (void)demoIcomoon
@@ -63,15 +62,15 @@
             [btn setTitle:[self titleForType:type] forState:UIControlStateNormal];
             
             if(type == BButtonTypeFacebook)
-                [btn addAwesomeIcon:IcomoonIcon_Lock beforeTitle:YES];
+                [btn addIcon:IcomoonIcon_Lock beforeTitle:YES];
             else if(type == BButtonTypeTwitter)
-                [btn addAwesomeIcon:IcomoonIcon_Login beforeTitle:NO];
+                [btn addIcon:IcomoonIcon_Login beforeTitle:NO];
             
             type++;
             if(type > BButtonTypeGray) {
                 unichar c = IcomoonIcon_MIN_ICON_UNICHAR + arc4random() % range;
                 NSString *iconString = [NSString stringWithCharacters:&c length:1];
-                btn = [BButton awesomeButtonWithOnlyIcon:iconString
+                btn = [BButton buttonWithOnlyIcon:iconString
                                                     type:(type % 2) ? BButtonTypeInverse : BButtonTypeDefault];
                 
                 btn.frame = CGRectMake(frame.origin.x, frame.origin.y, btn.frame.size.width, btn.frame.size.width);
@@ -98,13 +97,13 @@
             [btn setTitle:[self titleForType:type] forState:UIControlStateNormal];
             
             if(type == BButtonTypeFacebook)
-                [btn addAwesomeIcon:FAIconFacebook beforeTitle:YES];
+                [btn addIcon:FAIconFacebook beforeTitle:YES];
             else if(type == BButtonTypeTwitter)
-                [btn addAwesomeIcon:FAIconTwitter beforeTitle:NO];
+                [btn addIcon:FAIconTwitter beforeTitle:NO];
             
             type++;
             if(type > BButtonTypeGray) {
-                btn = [BButton awesomeButtonWithOnlyIcon:[awesomeStrings objectAtIndex:arc4random() % 209] 
+                btn = [BButton buttonWithOnlyIcon:[awesomeStrings objectAtIndex:arc4random() % 209] 
                                                     type:(type % 2) ? BButtonTypeInverse : BButtonTypeDefault];
                 
                 btn.frame = CGRectMake(frame.origin.x, frame.origin.y, btn.frame.size.width, btn.frame.size.width);

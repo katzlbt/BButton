@@ -148,13 +148,13 @@ NSString* BButton_spaceAfterIcon = @" ";
     return self;
 }
 
-+ (BButton *)awesomeButtonWithOnlyIcon:(NSString *)iconString type:(BButtonType)type
++ (BButton *)buttonWithOnlyIcon:(NSString *)iconString type:(BButtonType)type
 {
-    return [BButton awesomeButtonWithOnlyIcon:iconString
+    return [BButton buttonWithOnlyIcon:iconString
                                         color:[BButton colorForButtonType:type]];
 }
 
-+ (BButton *)awesomeButtonWithOnlyIcon:(NSString *)iconString color:(UIColor *)color
++ (BButton *)buttonWithOnlyIcon:(NSString *)iconString color:(UIColor *)color
 {
     return [[BButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 40.0f, 40.0f)
                                     color:color
@@ -231,7 +231,7 @@ NSString* BButton_spaceAfterIcon = @" ";
     self.color = [BButton colorForButtonType:type];
 }
 
-- (void)addAwesomeIcon:(NSString *)iconString beforeTitle:(BOOL)before
+- (void)addIcon:(NSString *)iconString beforeTitle:(BOOL)before
 {
     UIFont* f = [UIFont fontWithName:BButton_iconFontName
                                 size:self.titleLabel.font.pointSize];
