@@ -1,3 +1,15 @@
+#BButton 2.0 Forked
+
+BButton is a subclass of UIButton that looks like the [Twitter Bootstrap 2.3.1](http://twitter.github.com/bootstrap) buttons.
+BBIconLabel is a new class to display Icons without button. With a single method call it can be set up to convert entered text in InterfaceBuilder to Icons and scale them. No need to write code.
+
+### Changes
+*Refactored to be able to use Icomoon Font in Buttons.
+*Switched from Arrays to memory friendier #define structure.
+*Deprecated NSString extensions
+*TODO: Draw icon separately of text as this thinns the label font from bold to regular.
+* Addedd BBIconLabel class
+
 #BButton 2.0
 
 BButton is a subclass of UIButton that looks like the [Twitter Bootstrap 2.3.1](http://twitter.github.com/bootstrap) buttons.

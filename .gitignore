@@ -23,3 +23,5 @@ BButton/resources/icomoon.ttf
 
 
 .gitignore~
+
+*.md~
