@@ -4,10 +4,10 @@ BButton is a subclass of UIButton that looks like the [Twitter Bootstrap 2.3.1](
 BBIconLabel is a new class to display Icons without button. With a single method call it can be set up to convert entered text in InterfaceBuilder to Icons and scale them. No need to write code.
 
 ### Changes
-*Refactored to be able to use Icomoon Font in Buttons.
-*Switched from Arrays to memory friendier #define structure.
-*Deprecated NSString extensions
-*TODO: Draw icon separately of text as this thinns the label font from bold to regular.
+* Refactored to be able to use Icomoon Font in Buttons.
+* Switched from Arrays to memory friendier #define structure.
+* Deprecated NSString extensions
+* TODO: Draw icon separately of text as this thinns the label font from bold to regular.
 * Addedd BBIconLabel class
 
 #BButton 2.0
@@ -52,17 +52,6 @@ Create a `UIButton` and change its class to `BButton`
 <img width=261 src="http://img827.imageshack.us/img827/6596/ibbbutton.png"/>
 
 ### Create programmatically
-
-Initialize with any of the following methods:
-
-````objective-c
-- (id)initWithFrame:(CGRect)frame type:(BButtonType)type
-- (id)initWithFrame:(CGRect)frame type:(BButtonType)type icon:(FAIcon)icon fontSize:(CGFloat)fontSize
-- (id)initWithFrame:(CGRect)frame color:(UIColor *)aColor
-- (id)initWithFrame:(CGRect)frame color:(UIColor *)aColor icon:(FAIcon)icon fontSize:(CGFloat)fontSize
-+ (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon type:(BButtonType)type
-+ (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon color:(UIColor *)color
-````
 
 **See the included demo project `BButtonDemo.xcodeproj`**
 
