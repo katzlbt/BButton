@@ -36,8 +36,9 @@
 {
     [super viewDidLoad];
     
-    [self demoFontAwesome];
+    //[self demoFontAwesome];
     // MUST PROVIDE YOUR OWN TTF FILE! [self demoIcomoon];
+    [self demoIcomoon];
 }
 
 - (void)demoIcomoon
@@ -48,8 +49,8 @@
     
     [BButton setIconFontName:@"icomoon"];
     
-    // this is some sad fix for an incompatible very wide whitespace char in icomoon.
-    [BButton setSpacerStringBeforeIcon:@"" andAfterIcon:@""];
+    // this is the "thin-space" fix for an incompatible very wide whitespace %20 char in icomoon.
+    [BButton setSpacerStringBeforeIcon:@"\u2004\u2004" andAfterIcon:@"\u2009"]; // try also \u2003, \u2004, ... \u2009
     
     BButtonType type = 0;
     
