@@ -8,6 +8,9 @@
 #ifndef Locandy_IcomoonFont_h
 #define Locandy_IcomoonFont_h
 
+/* The icomoon font has a fixed width space char that interferes with icon texts.
+*/
+
 #define IcomoonIcon_MIN_ICON_UNICHAR 0xe002
 
 // #define IcomoonIcon_ @"\ue002"
