@@ -63,12 +63,17 @@ typedef enum {
   [BButton setIconFontName:@"icomoon"];
 */
 
+#ifdef DEBUG
+void BButton_listFonts(); // Add yourfont.ttf to application-info.plist with key "Fonts provided by application"
+#endif
+
 @interface BButton : UIButton
 
 @property (strong, nonatomic) UIColor *color;
 @property (assign, nonatomic) BOOL shouldShowDisabled;
 
 + (void) setIconFontName:(NSString*)fontName; // ADD the TTF file to your Info.plist!
++ (void) setSpacerStringBeforeIcon:(NSString*)before andAfterIcon:(NSString*)after; // ADD the TTF file to your Info.plist!
 
 #pragma mark - Initialization
 - (id)initWithFrame:(CGRect)frame type:(BButtonType)type;
@@ -85,13 +90,4 @@ typedef enum {
 - (void)addAwesomeIcon:(NSString *)iconString beforeTitle:(BOOL)before;
 
 @end
-
-inline void listFonts() // Add yourfont.ttf to application-info.plist with key "Fonts provided by application" then check with this function if it is included
-{
-    for (NSString *familyName in [UIFont familyNames]) {
-        for (NSString *fontName in [UIFont fontNamesForFamilyName:familyName]) {
-            NSLog(@"%@", fontName);
-        }
-    }
-};
 

@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4E3CA68E17634CAD00A6F91A /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E3CA68D17634CAD00A6F91A /* icomoon.ttf */; };
+		4EAD15321763C4A700B78B4D /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4EAD15311763C4A700B78B4D /* icomoon.ttf */; };
+		4EE3487117635C5600F59402 /* BBIconLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EE3487017635C5600F59402 /* BBIconLabel.m */; };
 		880EED34170B33B000462214 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880EED33170B33B000462214 /* UIKit.framework */; };
 		880EED36170B33B000462214 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880EED35170B33B000462214 /* Foundation.framework */; };
 		880EED3E170B33B000462214 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 880EED3C170B33B000462214 /* InfoPlist.strings */; };
@@ -26,8 +27,10 @@
 
 /* Begin PBXFileReference section */
 		4E3CA68C17634BF500A6F91A /* IcomoonFontIcons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IcomoonFontIcons.h; sourceTree = "<group>"; };
-		4E3CA68D17634CAD00A6F91A /* icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = icomoon.ttf; sourceTree = "<group>"; };
+		4EAD15311763C4A700B78B4D /* icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = icomoon.ttf; sourceTree = "<group>"; };
 		4EB4E7881763068300ADA064 /* FontAwesomeIcons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontAwesomeIcons.h; sourceTree = "<group>"; };
+		4EE3486F17635C5600F59402 /* BBIconLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BBIconLabel.h; sourceTree = "<group>"; };
+		4EE3487017635C5600F59402 /* BBIconLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BBIconLabel.m; sourceTree = "<group>"; };
 		880EED30170B33B000462214 /* BButtonDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BButtonDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		880EED33170B33B000462214 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		880EED35170B33B000462214 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -130,6 +133,8 @@
 				880EEDA0170B3EDB00462214 /* UIColor+BButton.h */,
 				880EEDA1170B3EDB00462214 /* UIColor+BButton.m */,
 				880EED9B170B357400462214 /* resources */,
+				4EE3486F17635C5600F59402 /* BBIconLabel.h */,
+				4EE3487017635C5600F59402 /* BBIconLabel.m */,
 			);
 			path = BButton;
 			sourceTree = "<group>";
@@ -137,7 +142,7 @@
 		880EED9B170B357400462214 /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				4E3CA68D17634CAD00A6F91A /* icomoon.ttf */,
+				4EAD15311763C4A700B78B4D /* icomoon.ttf */,
 				880EED9C170B357400462214 /* FontAwesome.ttf */,
 			);
 			path = resources;
@@ -200,7 +205,7 @@
 				880EED4A170B33B000462214 /* Default-568h@2x.png in Resources */,
 				880EED4D170B33B000462214 /* MainStoryboard.storyboard in Resources */,
 				880EED9F170B357400462214 /* FontAwesome.ttf in Resources */,
-				4E3CA68E17634CAD00A6F91A /* icomoon.ttf in Resources */,
+				4EAD15321763C4A700B78B4D /* icomoon.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -216,6 +221,7 @@
 				880EED53170B33B000462214 /* ViewController.m in Sources */,
 				880EED9E170B357400462214 /* BButton.m in Sources */,
 				880EEDA2170B3EDB00462214 /* UIColor+BButton.m in Sources */,
+				4EE3487117635C5600F59402 /* BBIconLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -40,6 +40,8 @@
 
 //NSString* BButton_iconFontName = @"icomoon";
 NSString* BButton_iconFontName = @"FontAwesome";
+NSString* BButton_spaceBeforeIcon = @" ";
+NSString* BButton_spaceAfterIcon = @" ";
 
 @interface BButton ()
 
@@ -51,8 +53,6 @@ NSString* BButton_iconFontName = @"FontAwesome";
 
 @end
 
-
-
 @implementation BButton
 
 @synthesize color;
@@ -62,6 +62,12 @@ NSString* BButton_iconFontName = @"FontAwesome";
 + (void) setIconFontName:(NSString*)fontName // changes the icon font for BButton globally
 {
     BButton_iconFontName = fontName;
+}
+
++ (void) setSpacerStringBeforeIcon:(NSString*)before andAfterIcon:(NSString*)after // ADD the TTF file to your Info.plist!
+{
+    BButton_spaceBeforeIcon = before;
+    BButton_spaceAfterIcon = after;
 }
 
 #pragma mark - Initialization
@@ -102,9 +108,11 @@ NSString* BButton_iconFontName = @"FontAwesome";
     if(self) {
         UIFont* f = [UIFont fontWithName:BButton_iconFontName size:fontSize];
         
+#ifdef DEBUG
         if (f == nil) {
             NSLog(@"BButton Font '%@' not found!",BButton_iconFontName);
         }
+#endif
         
         self.titleLabel.font = f;
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -229,20 +237,16 @@ NSString* BButton_iconFontName = @"FontAwesome";
                                 size:self.titleLabel.font.pointSize];
     self.titleLabel.font = f;
     
+#ifdef DEBUG
     if (f == nil) {
         NSLog(@"BButton Font '%@' not found!",BButton_iconFontName);
     }
+#endif
     
-    NSString *title = [NSString stringWithFormat:@"%@", iconString];
-    
-    if([self.titleLabel.text length] != 0) {
-        if(before)
-            title = [title stringByAppendingFormat:@" %@", self.titleLabel.text];
-        else
-            title = [NSString stringWithFormat:@"%@  %@", self.titleLabel.text, iconString];
-    }
-    
-    [self setTitle:title forState:UIControlStateNormal];
+    if(before)
+        [self setTitle:[NSString stringWithFormat:@"%@%@%@", iconString, BButton_spaceAfterIcon, self.titleLabel.text] forState:UIControlStateNormal];
+    else
+        [self setTitle:[NSString stringWithFormat:@"%@%@%@", self.titleLabel.text, BButton_spaceBeforeIcon, iconString] forState:UIControlStateNormal];;
 }
 
 + (UIColor *)colorForButtonType:(BButtonType)type
@@ -366,3 +370,14 @@ NSString* BButton_iconFontName = @"FontAwesome";
 }
 
 @end
+
+#ifdef DEBUG
+void BButton_listFonts() // Add yourfont.ttf to application-info.plist with key "Fonts provided by application" then check with this function if it is included
+{
+    for (NSString *familyName in [UIFont familyNames]) {
+        for (NSString *fontName in [UIFont fontNamesForFamilyName:familyName]) {
+            NSLog(@"%@", fontName);
+        }
+    }
+};
+#endif

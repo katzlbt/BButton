@@ -10,6 +10,7 @@
 
 #import "ViewController.h"
 #import "IcomoonFontIcons.h"
+#import "BBIconLabel.h"
 
 @interface ViewController ()
 
@@ -19,19 +20,37 @@
 
 @implementation ViewController
 
++ (void)initialize
+{
+    // Text to Icon converter for UILabels of type BBIconLabels (FULL TEXT MATCH REQUIRED)
+    // Use map here and the rest you can do in InterfaceBuilder without coding
+    // we need to use +initialize to have the dict ready when the XIB is loaded.
+    [BBIconLabel setTextToIconMap:
+        [NSDictionary dictionaryWithObjectsAndKeys:
+            FAIconTwitter, @"#Icon1",
+         nil]];
+}
+
 #pragma mark - View lifecycle
 - (void)viewDidLoad
 {
     [super viewDidLoad];
     
-    //[self demoFontAwesome];
-    [self demoIcomoon];
+    [self demoFontAwesome];
+    // MUST PROVIDE YOUR OWN TTF FILE! [self demoIcomoon];
 }
 
 - (void)demoIcomoon
 {
+#ifdef DEBUG
+    BButton_listFonts();
+#endif
+    
     [BButton setIconFontName:@"icomoon"];
-        
+    
+    // this is some sad fix for an incompatible very wide whitespace char in icomoon.
+    [BButton setSpacerStringBeforeIcon:@"" andAfterIcon:@""];
+    
     BButtonType type = 0;
     
     int range = IcomoonIcon_MAX_ICON_UNICHAR - IcomoonIcon_MIN_ICON_UNICHAR;
