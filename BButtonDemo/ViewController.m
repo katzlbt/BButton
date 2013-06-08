@@ -9,6 +9,7 @@
 //
 
 #import "ViewController.h"
+#import "IcomoonFontIcons.h"
 
 @interface ViewController ()
 
@@ -23,6 +24,46 @@
 {
     [super viewDidLoad];
     
+    //[self demoFontAwesome];
+    [self demoIcomoon];
+}
+
+- (void)demoIcomoon
+{
+    [BButton setIconFontName:@"icomoon"];
+        
+    BButtonType type = 0;
+    
+    int range = IcomoonIcon_MAX_ICON_UNICHAR - IcomoonIcon_MIN_ICON_UNICHAR;
+    for(int i = 0; i < 2; i++) {
+        
+        for(int j = 0; j < 7; j++) {
+            CGRect frame = CGRectMake(32.0f + (i * 144.0f), 20.0f + (j * 60.0f), 112.0f, 40.0f);
+            BButton *btn = [[BButton alloc] initWithFrame:frame type:type];
+            [btn setTitle:[self titleForType:type] forState:UIControlStateNormal];
+            
+            if(type == BButtonTypeFacebook)
+                [btn addAwesomeIcon:IcomoonIcon_Lock beforeTitle:YES];
+            else if(type == BButtonTypeTwitter)
+                [btn addAwesomeIcon:IcomoonIcon_Login beforeTitle:NO];
+            
+            type++;
+            if(type > BButtonTypeGray) {
+                unichar c = IcomoonIcon_MIN_ICON_UNICHAR + arc4random() % range;
+                NSString *iconString = [NSString stringWithCharacters:&c length:1];
+                btn = [BButton awesomeButtonWithOnlyIcon:iconString
+                                                    type:(type % 2) ? BButtonTypeInverse : BButtonTypeDefault];
+                
+                btn.frame = CGRectMake(frame.origin.x, frame.origin.y, btn.frame.size.width, btn.frame.size.width);
+            }
+            
+            [self.view addSubview:btn];
+        }
+    }
+}
+
+- (void)demoFontAwesome
+{
     // there is no longer a built-in mapping of integers to icons, so we need this for the demo
     NSArray* awesomeStrings = [NSArray arrayWithObjects:@"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", nil];
 

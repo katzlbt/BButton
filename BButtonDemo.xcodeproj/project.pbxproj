@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E3CA68E17634CAD00A6F91A /* icomoon.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4E3CA68D17634CAD00A6F91A /* icomoon.ttf */; };
 		880EED34170B33B000462214 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880EED33170B33B000462214 /* UIKit.framework */; };
 		880EED36170B33B000462214 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880EED35170B33B000462214 /* Foundation.framework */; };
 		880EED3E170B33B000462214 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 880EED3C170B33B000462214 /* InfoPlist.strings */; };
@@ -24,6 +25,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4E3CA68C17634BF500A6F91A /* IcomoonFontIcons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IcomoonFontIcons.h; sourceTree = "<group>"; };
+		4E3CA68D17634CAD00A6F91A /* icomoon.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = icomoon.ttf; sourceTree = "<group>"; };
 		4EB4E7881763068300ADA064 /* FontAwesomeIcons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FontAwesomeIcons.h; sourceTree = "<group>"; };
 		880EED30170B33B000462214 /* BButtonDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BButtonDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		880EED33170B33B000462214 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -120,6 +123,7 @@
 		880EED96170B357400462214 /* BButton */ = {
 			isa = PBXGroup;
 			children = (
+				4E3CA68C17634BF500A6F91A /* IcomoonFontIcons.h */,
 				4EB4E7881763068300ADA064 /* FontAwesomeIcons.h */,
 				880EED99170B357400462214 /* BButton.h */,
 				880EED9A170B357400462214 /* BButton.m */,
@@ -133,6 +137,7 @@
 		880EED9B170B357400462214 /* resources */ = {
 			isa = PBXGroup;
 			children = (
+				4E3CA68D17634CAD00A6F91A /* icomoon.ttf */,
 				880EED9C170B357400462214 /* FontAwesome.ttf */,
 			);
 			path = resources;
@@ -195,6 +200,7 @@
 				880EED4A170B33B000462214 /* Default-568h@2x.png in Resources */,
 				880EED4D170B33B000462214 /* MainStoryboard.storyboard in Resources */,
 				880EED9F170B357400462214 /* FontAwesome.ttf in Resources */,
+				4E3CA68E17634CAD00A6F91A /* icomoon.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
