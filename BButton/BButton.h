@@ -37,7 +37,6 @@
 
 #import <UIKit/UIKit.h>
 #import "UIColor+BButton.h"
-#import "NSString+FontAwesome.h"
 
 typedef enum {
     BButtonTypeDefault = 0,
@@ -50,27 +49,49 @@ typedef enum {
     BButtonTypeTwitter,
     BButtonTypeFacebook,
     BButtonTypePurple,
-    BButtonTypeGray
+    BButtonTypeGray,
+    BButtonTypeOrange
 } BButtonType;
 
+/*
+ 1 - Add .TTF font in your application
+ 2 - Modify the application-info.plist file.
+ 3 - Add the key "Fonts provided by application" to a new row
+ 4 - and add each .TTF file (of font) to each line.
+
+ Assumptions: You use only one icon font.
+  [BButton setIconFontName:@"icomoon"];
+*/
 
 @interface BButton : UIButton
 
 @property (strong, nonatomic) UIColor *color;
 @property (assign, nonatomic) BOOL shouldShowDisabled;
 
++ (void) setIconFontName:(NSString*)fontName; // ADD the TTF file to your Info.plist!
+
 #pragma mark - Initialization
 - (id)initWithFrame:(CGRect)frame type:(BButtonType)type;
-- (id)initWithFrame:(CGRect)frame type:(BButtonType)type icon:(FAIcon)icon fontSize:(CGFloat)fontSize;
+- (id)initWithFrame:(CGRect)frame type:(BButtonType)type icon:(NSString *)iconString fontSize:(CGFloat)fontSize;
 
 - (id)initWithFrame:(CGRect)frame color:(UIColor *)aColor;
-- (id)initWithFrame:(CGRect)frame color:(UIColor *)aColor icon:(FAIcon)icon fontSize:(CGFloat)fontSize;
+- (id)initWithFrame:(CGRect)frame color:(UIColor *)aColor icon:(NSString *)iconString fontSize:(CGFloat)fontSize;
 
-+ (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon type:(BButtonType)type;
-+ (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon color:(UIColor *)color;
++ (BButton *)awesomeButtonWithOnlyIcon:(NSString *)iconString type:(BButtonType)type;
++ (BButton *)awesomeButtonWithOnlyIcon:(NSString *)iconString color:(UIColor *)color;
 
 #pragma mark - BButton
 - (void)setType:(BButtonType)type;
-- (void)addAwesomeIcon:(FAIcon)icon beforeTitle:(BOOL)before;
+- (void)addAwesomeIcon:(NSString *)iconString beforeTitle:(BOOL)before;
 
 @end
+
+inline void listFonts() // Add yourfont.ttf to application-info.plist with key "Fonts provided by application" then check with this function if it is included
+{
+    for (NSString *familyName in [UIFont familyNames]) {
+        for (NSString *fontName in [UIFont fontNamesForFamilyName:familyName]) {
+            NSLog(@"%@", fontName);
+        }
+    }
+};
+

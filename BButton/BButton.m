@@ -38,6 +38,9 @@
 #import "BButton.h"
 #import <CoreGraphics/CoreGraphics.h>
 
+//NSString* BButton_iconFontName = @"icomoon";
+NSString* BButton_iconFontName = @"FontAwesome";
+
 @interface BButton ()
 
 @property (assign, nonatomic) CGGradientRef gradient;
@@ -56,6 +59,11 @@
 @synthesize gradient;
 @synthesize shouldShowDisabled;
 
++ (void) setIconFontName:(NSString*)fontName // changes the icon font for BButton globally
+{
+    BButton_iconFontName = fontName;
+}
+
 #pragma mark - Initialization
 - (void)setup
 {
@@ -71,11 +79,11 @@
     return [self initWithFrame:frame color:[BButton colorForButtonType:type]];
 }
 
-- (id)initWithFrame:(CGRect)frame type:(BButtonType)type icon:(FAIcon)icon fontSize:(CGFloat)fontSize
+- (id)initWithFrame:(CGRect)frame type:(BButtonType)type icon:(NSString *)iconString fontSize:(CGFloat)fontSize
 {
     return [self initWithFrame:frame
                          color:[BButton colorForButtonType:type]
-                          icon:icon
+                          icon:iconString
                       fontSize:fontSize];
 }
 
@@ -88,13 +96,19 @@
     return self;
 }
 
-- (id)initWithFrame:(CGRect)frame color:(UIColor *)aColor icon:(FAIcon)icon fontSize:(CGFloat)fontSize
+- (id)initWithFrame:(CGRect)frame color:(UIColor *)aColor icon:(NSString *)iconString fontSize:(CGFloat)fontSize
 {
     self = [self initWithFrame:frame color:aColor];
     if(self) {
-        self.titleLabel.font = [UIFont fontWithName:@"FontAwesome" size:fontSize];
+        UIFont* f = [UIFont fontWithName:BButton_iconFontName size:fontSize];
+        
+        if (f == nil) {
+            NSLog(@"BButton Font '%@' not found!",BButton_iconFontName);
+        }
+        
+        self.titleLabel.font = f;
         self.titleLabel.textAlignment = NSTextAlignmentCenter;
-        [self setTitle:[NSString stringFromAwesomeIcon:icon] forState:UIControlStateNormal];
+        [self setTitle:iconString forState:UIControlStateNormal];
     }
     return self;
 }
@@ -126,17 +140,17 @@
     return self;
 }
 
-+ (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon type:(BButtonType)type
++ (BButton *)awesomeButtonWithOnlyIcon:(NSString *)iconString type:(BButtonType)type
 {
-    return [BButton awesomeButtonWithOnlyIcon:icon
+    return [BButton awesomeButtonWithOnlyIcon:iconString
                                         color:[BButton colorForButtonType:type]];
 }
 
-+ (BButton *)awesomeButtonWithOnlyIcon:(FAIcon)icon color:(UIColor *)color
++ (BButton *)awesomeButtonWithOnlyIcon:(NSString *)iconString color:(UIColor *)color
 {
     return [[BButton alloc] initWithFrame:CGRectMake(0.0f, 0.0f, 40.0f, 40.0f)
                                     color:color
-                                     icon:icon
+                                     icon:iconString
                                  fontSize:20.0f];
 }
 
@@ -209,15 +223,19 @@
     self.color = [BButton colorForButtonType:type];
 }
 
-- (void)addAwesomeIcon:(FAIcon)icon beforeTitle:(BOOL)before
+- (void)addAwesomeIcon:(NSString *)iconString beforeTitle:(BOOL)before
 {
-    NSString *iconString = [NSString stringFromAwesomeIcon:icon];
-    self.titleLabel.font = [UIFont fontWithName:@"FontAwesome"
-                                           size:self.titleLabel.font.pointSize];
+    UIFont* f = [UIFont fontWithName:BButton_iconFontName
+                                size:self.titleLabel.font.pointSize];
+    self.titleLabel.font = f;
+    
+    if (f == nil) {
+        NSLog(@"BButton Font '%@' not found!",BButton_iconFontName);
+    }
     
     NSString *title = [NSString stringWithFormat:@"%@", iconString];
     
-    if(![self.titleLabel.text isEmpty]) {
+    if([self.titleLabel.text length] != 0) {
         if(before)
             title = [title stringByAppendingFormat:@" %@", self.titleLabel.text];
         else
@@ -261,6 +279,9 @@
             break;
         case BButtonTypeGray:
             newColor = [UIColor colorWithRed:0.60f green:0.60f blue:0.60f alpha:1.00f];
+            break;
+        case BButtonTypeOrange:
+            newColor = [UIColor colorWithRed:1.0f green:0.388235294f blue:0.08627451f alpha:1.00f];
             break;
         case BButtonTypeDefault:
         default:

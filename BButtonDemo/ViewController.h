@@ -10,6 +10,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BButton.h"
+#import "FontAwesomeIcons.h"
 
 @interface ViewController : UIViewController
 
