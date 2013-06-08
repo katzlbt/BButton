@@ -38,11 +38,11 @@ NSDictionary* BBIconLabel_textToIconsMap = nil;
 
 - (void) adjustFont // resize every time the label changes itself
 {
-    int h = self.frame.size.height - 2;
+    int h = self.frame.size.height - 4;
     if (self.frame.size.height < 0) // frame is not ready in -awakeFromNib
         h = self.font.pointSize;
     
-    UIFont* f = [UIFont fontWithName:BBIconLabel_iconFontName size:self.frame.size.height];
+    UIFont* f = [UIFont fontWithName:BBIconLabel_iconFontName size:h];
     
 #ifdef DEBUG
     if (f == nil)
