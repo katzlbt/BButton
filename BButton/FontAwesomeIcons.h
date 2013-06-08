@@ -9,7 +9,7 @@
 #ifndef BButton_FontAwesomeIcons_h
 #define BButton_FontAwesomeIcons_h
 
-#define FAIconGlass                @""
+#define FAIconGlass                @"\uf000"
 #define FAIconMusic                @""
 #define FAIconSearch               @""
 #define FAIconEnvelope             @""
@@ -218,6 +218,6 @@
 #define FAIconSitemap              @""
 #define FAIconUmbrella             @""
 #define FAIconPaste                @""
-#define FAIconUserMd               @""
+#define FAIconUserMd               @"\uf0f0"
 
 #endif
