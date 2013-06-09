@@ -11,6 +11,7 @@
 //NSString* BButton_iconFontName = @"icomoon";
 NSString* BBIconLabel_iconFontName = @"FontAwesome";
 NSDictionary* BBIconLabel_textToIconsMap = nil;
+unsigned int BBIconLabel_padding = 4;
 
 @implementation BBIconLabel
 
@@ -22,6 +23,11 @@ NSDictionary* BBIconLabel_textToIconsMap = nil;
 + (void) setIconFontName:(NSString*)fontName // changes the icon font for BButton globally
 {
     BBIconLabel_iconFontName = fontName;
+}
+
++ (void) setPadding:(unsigned int)padding    // change the default border padding of 4!
+{
+    BBIconLabel_padding = padding;
 }
 
 - (void)awakeFromNib
@@ -38,7 +44,7 @@ NSDictionary* BBIconLabel_textToIconsMap = nil;
 
 - (void) adjustFont // resize every time the label changes itself
 {
-    int h = self.frame.size.height - 4;
+    int h = self.frame.size.height - BBIconLabel_padding;
     if (self.frame.size.height < 0) // frame is not ready in -awakeFromNib
         h = self.font.pointSize;
     

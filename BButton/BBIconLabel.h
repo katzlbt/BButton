@@ -13,6 +13,7 @@
 @interface BBIconLabel : UILabel
 
 + (void) setIconFontName:(NSString*)fontName; // ADD the TTF file to your Info.plist!
++ (void) setPadding:(unsigned int)padding;    // change the default border padding of 4 (reduces font size of icon font)
 
 /** Set automatic translation of label text to icons.
  Example:
