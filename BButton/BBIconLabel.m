@@ -53,7 +53,7 @@ unsigned int BBIconLabel_padding = 4;
 #ifdef DEBUG
     if (f == nil)
     {
-        NSLog(@"BButton Font '%@' not found!",BBIconLabel_iconFontName);
+        NSLog(@"BButton Font '%@' not found! Check if font is in Info.plist.",BBIconLabel_iconFontName);
     }
 #endif
     

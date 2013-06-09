@@ -110,7 +110,7 @@ NSString* BButton_spaceAfterIcon = @" ";
         
 #ifdef DEBUG
         if (f == nil) {
-            NSLog(@"BButton Font '%@' not found!",BButton_iconFontName);
+            NSLog(@"BButton Font '%@' not found! Check if font is in Info.plist.",BButton_iconFontName);
         }
 #endif
         
@@ -239,7 +239,7 @@ NSString* BButton_spaceAfterIcon = @" ";
     
 #ifdef DEBUG
     if (f == nil) {
-        NSLog(@"BButton Font '%@' not found!",BButton_iconFontName);
+        NSLog(@"BButton Font '%@' not found! Check if font is in Info.plist.",BButton_iconFontName);
     }
 #endif
     
