@@ -43,6 +43,8 @@ NSString* BButton_iconFontName = @"FontAwesome";
 NSString* BButton_spaceBeforeIcon = @" ";
 NSString* BButton_spaceAfterIcon = @" ";
 
+NSDictionary* BButton_textToIconsMap = nil;
+
 @interface BButton ()
 
 @property (assign, nonatomic) CGGradientRef gradient;
@@ -58,6 +60,11 @@ NSString* BButton_spaceAfterIcon = @" ";
 @synthesize color;
 @synthesize gradient;
 @synthesize shouldShowDisabled;
+
++ (void) setTextToIconMap:(NSDictionary*)map
+{
+    BButton_textToIconsMap = map;
+}
 
 + (void) setIconFontName:(NSString*)fontName // changes the icon font for BButton globally
 {
@@ -301,6 +308,13 @@ NSString* BButton_spaceAfterIcon = @" ";
 {
     [super drawRect:rect];
     CGContextRef context = UIGraphicsGetCurrentContext();
+
+#ifdef DEBUG
+    if(self.frame.size.height < 30)
+    {
+        NSLog(@"Warning button height must be set by constraint. Default height of AppleUIButton (44px) does not work. It is not transfered from InterfaceBuilder to the App, one px higher or lower works fine.");
+    }
+#endif
     
     UIColor *border = [self.color darkenColorWithValue:0.06f];
     

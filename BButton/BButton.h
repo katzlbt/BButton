@@ -39,7 +39,7 @@
 #import "UIColor+BButton.h"
 
 typedef enum {
-    BButtonTypeDefault = 0,
+    BButtonTypeDefault = 1,
     BButtonTypePrimary,
     BButtonTypeInfo,
     BButtonTypeSuccess,
@@ -69,11 +69,20 @@ void BButton_listFonts(); // Add yourfont.ttf to application-info.plist with key
 
 @interface BButton : UIButton
 
-@property (strong, nonatomic) UIColor *color;
+@property (strong, nonatomic) UIColor *color; // can be set in InterfaceBuilder as User defined Attribute color of Type UIColor
 @property (assign, nonatomic) BOOL shouldShowDisabled;
 
 + (void) setIconFontName:(NSString*)fontName; // ADD the TTF file to your Info.plist!
 + (void) setSpacerStringBeforeIcon:(NSString*)before andAfterIcon:(NSString*)after; // ADD the TTF file to your Info.plist!
+
+/** Set automatic translation of label text to icons.
+ Example:
+ + inizialize //(E.g. App Delegate or any other main class)
+ {
+ [BButton setTextToIconMap:[NSDictionary dictionaryWithObjectsAndKeys: FAIconRemove, "#IL1", nil]];
+ }
+ */
++ (void) setTextToIconMap:(NSDictionary*)map;
 
 #pragma mark - Initialization
 - (id)initWithFrame:(CGRect)frame type:(BButtonType)type;

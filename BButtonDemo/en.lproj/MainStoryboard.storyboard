@@ -15,20 +15,41 @@
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="#Icon1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGY-hA-E0z" customClass="BBIconLabel">
                                 <color key="backgroundColor" red="1" green="0.95623903422160716" blue="0.8206218149029102" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="mgC-zA-4HU"/>
                                     <constraint firstAttribute="height" constant="70" id="wuL-nc-XIz"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.082352943720000002" green="0.47058826679999999" blue="0.89589608430000001" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                 <size key="shadowOffset" width="3" height="3"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQu-4O-YGj" customClass="BButton">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="QDt-xg-eri"/>
+                                    <constraint firstAttribute="height" constant="46" id="gyD-V0-YZH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Red">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="color">
+                                        <color key="value" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="NGY-hA-E0z" secondAttribute="bottom" constant="7" id="4Q1-ij-wNf"/>
-                            <constraint firstAttribute="trailing" secondItem="NGY-hA-E0z" secondAttribute="trailing" constant="8" id="8lS-jt-YSH"/>
+                            <constraint firstAttribute="trailing" secondItem="kQu-4O-YGj" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="R5d-lB-IWr"/>
+                            <constraint firstAttribute="trailing" secondItem="NGY-hA-E0z" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Up9-5u-2dg"/>
+                            <constraint firstItem="NGY-hA-E0z" firstAttribute="leading" secondItem="kQu-4O-YGj" secondAttribute="leading" type="default" id="WY7-Ku-l3T"/>
+                            <constraint firstItem="NGY-hA-E0z" firstAttribute="top" secondItem="kQu-4O-YGj" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="rTR-GM-myI"/>
+                            <constraint firstAttribute="bottom" secondItem="NGY-hA-E0z" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="tl7-Qd-PKO"/>
                         </constraints>
                     </view>
                 </viewController>
@@ -39,6 +60,9 @@
     <classes>
         <class className="BBIconLabel" superclassName="UILabel">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/BBIconLabel.h"/>
+        </class>
+        <class className="BButton" superclassName="UIButton">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/BButton.h"/>
         </class>
         <class className="NSLayoutConstraint" superclassName="NSObject">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
