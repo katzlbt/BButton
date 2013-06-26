@@ -61,6 +61,60 @@ NSDictionary* BButton_textToIconsMap = nil;
 @synthesize gradient;
 @synthesize shouldShowDisabled;
 
+UIColor* BButton_ColorPrimary = nil;
+UIColor* BButton_ColorDefault = nil;
+UIColor* BButton_ColorWarning = nil;
+UIColor* BButton_ColorInfo = nil;
+UIColor* BButton_ColorSuccess = nil;
+UIColor* BButton_ColorDanger = nil;
+
++ (UIColor*)colorPrimary;
+{
+    if(BButton_ColorPrimary == nil)
+        BButton_ColorPrimary = [UIColor colorWithRed:0.00f green:0.33f blue:0.80f alpha:1.00f];
+    
+    return BButton_ColorPrimary;
+}
+
++ (UIColor*)colorDefault;
+{
+    if(BButton_ColorDefault == nil)
+        BButton_ColorDefault = [UIColor colorWithRed:0.85f green:0.85f blue:0.85f alpha:1.00f];
+    
+    return BButton_ColorDefault;
+}
+
++ (UIColor*)colorWarning;
+{
+    if(BButton_ColorWarning == nil)
+        BButton_ColorWarning = [UIColor colorWithRed:0.97f green:0.58f blue:0.02f alpha:1.00f];
+    
+    return BButton_ColorWarning;
+}
+
++ (UIColor*)colorInfo;
+{
+    if(BButton_ColorInfo == nil)
+        BButton_ColorInfo = [UIColor colorWithRed:0.18f green:0.59f blue:0.71f alpha:1.00f];
+    
+    return BButton_ColorInfo;
+}
+
++ (UIColor*)colorSuccess;
+{
+    if(BButton_ColorSuccess == nil)
+        BButton_ColorSuccess = [UIColor colorWithRed:0.32f green:0.64f blue:0.32f alpha:1.00f];
+    
+    return BButton_ColorSuccess;
+}
++ (UIColor*)colorDanger;
+{
+    if(BButton_ColorDanger == nil)
+        BButton_ColorDanger = [UIColor colorWithRed:0.74f green:0.21f blue:0.18f alpha:1.00f];
+    
+    return BButton_ColorDanger;
+}
+
 + (void) setTextToIconMap:(NSDictionary*)map
 {
     BButton_textToIconsMap = map;
@@ -257,50 +311,34 @@ NSDictionary* BButton_textToIconsMap = nil;
 }
 
 + (UIColor *)colorForButtonType:(BButtonType)type
-{
-    UIColor *newColor = nil;
-    
+{    
     switch (type) {
         case BButtonTypePrimary:
-            newColor = [UIColor colorWithRed:0.00f green:0.33f blue:0.80f alpha:1.00f];
-            break;
+            return [BButton colorPrimary];
         case BButtonTypeInfo:
-            newColor = [UIColor colorWithRed:0.18f green:0.59f blue:0.71f alpha:1.00f];
-            break;
+            return [BButton colorInfo];
         case BButtonTypeSuccess:
-            newColor = [UIColor colorWithRed:0.32f green:0.64f blue:0.32f alpha:1.00f];
-            break;
+            return [BButton colorSuccess];
         case BButtonTypeWarning:
-            newColor = [UIColor colorWithRed:0.97f green:0.58f blue:0.02f alpha:1.00f];
-            break;
+            return [BButton colorWarning];
         case BButtonTypeDanger:
-            newColor = [UIColor colorWithRed:0.74f green:0.21f blue:0.18f alpha:1.00f];
-            break;
+            return [BButton colorDanger];
         case BButtonTypeInverse:
-            newColor = [UIColor colorWithRed:0.13f green:0.13f blue:0.13f alpha:1.00f];
-            break;
+            return [UIColor colorWithRed:0.13f green:0.13f blue:0.13f alpha:1.00f];
         case BButtonTypeTwitter:
-            newColor = [UIColor colorWithRed:0.25f green:0.60f blue:1.00f alpha:1.00f];
-            break;
+            return [UIColor colorWithRed:0.25f green:0.60f blue:1.00f alpha:1.00f];
         case BButtonTypeFacebook:
-            newColor = [UIColor colorWithRed:0.23f green:0.35f blue:0.60f alpha:1.00f];
-            break;
+            return [UIColor colorWithRed:0.23f green:0.35f blue:0.60f alpha:1.00f];
         case BButtonTypePurple:
-            newColor = [UIColor colorWithRed:0.45f green:0.30f blue:0.75f alpha:1.00f];
-            break;
+            return [UIColor colorWithRed:0.45f green:0.30f blue:0.75f alpha:1.00f];
         case BButtonTypeGray:
-            newColor = [UIColor colorWithRed:0.60f green:0.60f blue:0.60f alpha:1.00f];
-            break;
+            return [UIColor colorWithRed:0.60f green:0.60f blue:0.60f alpha:1.00f];
         case BButtonTypeOrange:
-            newColor = [UIColor colorWithRed:1.0f green:0.388235294f blue:0.08627451f alpha:1.00f];
-            break;
+            return [UIColor colorWithRed:1.0f green:0.388235294f blue:0.08627451f alpha:1.00f];
         case BButtonTypeDefault:
         default:
-            newColor = [UIColor colorWithRed:0.85f green:0.85f blue:0.85f alpha:1.00f];
-            break;
-    }
-    
-    return newColor;
+            return [BButton colorDefault];
+    }    
 }
 
 #pragma mark - Drawing

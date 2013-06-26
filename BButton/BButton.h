@@ -53,6 +53,17 @@ typedef enum {
     BButtonTypeOrange
 } BButtonType;
 
+/**
+ Assign those to redefine return value of the BButton color class methods.
+ Will be nil until first used by class method.
+ */
+extern UIColor* BButton_ColorPrimary;
+extern UIColor* BButton_ColorDefault;
+extern UIColor* BButton_ColorWarning;
+extern UIColor* BButton_ColorInfo;
+extern UIColor* BButton_ColorSuccess;
+extern UIColor* BButton_ColorDanger;
+
 /*
  1 - Add .TTF font in your application
  2 - Modify the application-info.plist file.
@@ -97,6 +108,13 @@ void BButton_listFonts(); // Add yourfont.ttf to application-info.plist with key
 #pragma mark - BButton
 - (void)setType:(BButtonType)type;
 - (void)addIcon:(NSString *)iconString beforeTitle:(BOOL)before;
+
++ (UIColor*)colorPrimary;
++ (UIColor*)colorDefault;
++ (UIColor*)colorWarning;
++ (UIColor*)colorInfo;
++ (UIColor*)colorSuccess;
++ (UIColor*)colorDanger;
 
 @end
 
