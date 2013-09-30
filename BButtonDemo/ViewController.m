@@ -58,7 +58,8 @@
         
         for(int j = 0; j < 7; j++) {
             CGRect frame = CGRectMake(32.0f + (i * 144.0f), 20.0f + (j * 60.0f), 112.0f, 40.0f);
-            BButton *btn = [[BButton alloc] initWithFrame:frame type:type];
+            BButton *btn = [[BButton alloc] initWithFrame:frame];
+            [btn setType:type];
             [btn setTitle:[self titleForType:type] forState:UIControlStateNormal];
             
             if(type == BButtonTypeFacebook)
@@ -70,10 +71,10 @@
             if(type > BButtonTypeGray) {
                 unichar c = IcomoonIcon_MIN_ICON_UNICHAR + arc4random() % range;
                 NSString *iconString = [NSString stringWithCharacters:&c length:1];
-                btn = [BButton buttonWithOnlyIcon:iconString
-                                                    type:(type % 2) ? BButtonTypeInverse : BButtonTypeDefault];
                 
-                btn.frame = CGRectMake(frame.origin.x, frame.origin.y, btn.frame.size.width, btn.frame.size.width);
+                btn = [[BButton alloc] initWithFrame:CGRectMake(frame.origin.x, frame.origin.y, 40.0f, 40.0f)];
+                [btn setType:(type % 2) ? BButtonTypeInverse : BButtonTypeDefault];
+                [btn setTitle:iconString withFontSize:20.0];
             }
             
             [self.view addSubview:btn];
@@ -84,6 +85,7 @@
 - (void)demoFontAwesome
 {
     // there is no longer a built-in mapping of integers to icons, so we need this for the demo
+    // use the appropriate header files with #define macros.
     NSArray* awesomeStrings = [NSArray arrayWithObjects:@"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", @"", nil];
 
     
@@ -92,9 +94,12 @@
     for(int i = 0; i < 2; i++) {
         
         for(int j = 0; j < 7; j++) {
+            
+            // create normal text only buttons
             CGRect frame = CGRectMake(32.0f + (i * 144.0f), 20.0f + (j * 60.0f), 112.0f, 40.0f);
-            BButton *btn = [[BButton alloc] initWithFrame:frame type:type];
-            [btn setTitle:[self titleForType:type] forState:UIControlStateNormal];
+            BButton *btn = [[BButton alloc] initWithFrame:frame];
+            [btn setType:type];
+            [btn setTitle:[self titleForType:type] forState:UIControlStateNormal]; // UIControl method, default font
             
             if(type == BButtonTypeFacebook)
                 [btn addIcon:FAIconFacebook beforeTitle:YES];
@@ -103,10 +108,9 @@
             
             type++;
             if(type > BButtonTypeGray) {
-                btn = [BButton buttonWithOnlyIcon:[awesomeStrings objectAtIndex:arc4random() % 209] 
-                                                    type:(type % 2) ? BButtonTypeInverse : BButtonTypeDefault];
-                
-                btn.frame = CGRectMake(frame.origin.x, frame.origin.y, btn.frame.size.width, btn.frame.size.width);
+                btn = [[BButton alloc] initWithFrame:CGRectMake(frame.origin.x, frame.origin.y, 40.0f, 40.0f)];
+                [btn setType:(type % 2) ? BButtonTypeInverse : BButtonTypeDefault];
+                [btn setTitle:[awesomeStrings objectAtIndex:arc4random() % 209] withFontSize:20.0];
             }
             
             [self.view addSubview:btn];

@@ -11,7 +11,6 @@
 		4E11220417F991E3007D6E59 /* BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E1121FC17F991E3007D6E59 /* BButton.m */; };
 		4E11220517F991E3007D6E59 /* LICENSE.md in Resources */ = {isa = PBXBuildFile; fileRef = 4E1121FF17F991E3007D6E59 /* LICENSE.md */; };
 		4E11220617F991E3007D6E59 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 4E11220017F991E3007D6E59 /* README.md */; };
-		4E11220717F991E3007D6E59 /* UIColor+BButton.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E11220217F991E3007D6E59 /* UIColor+BButton.m */; };
 		880EED34170B33B000462214 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880EED33170B33B000462214 /* UIKit.framework */; };
 		880EED36170B33B000462214 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 880EED35170B33B000462214 /* Foundation.framework */; };
 		880EED3E170B33B000462214 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 880EED3C170B33B000462214 /* InfoPlist.strings */; };
@@ -34,8 +33,6 @@
 		4E1121FE17F991E3007D6E59 /* IcomoonFontIcons.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IcomoonFontIcons.h; sourceTree = "<group>"; };
 		4E1121FF17F991E3007D6E59 /* LICENSE.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.md; sourceTree = "<group>"; };
 		4E11220017F991E3007D6E59 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = README.md; sourceTree = "<group>"; };
-		4E11220117F991E3007D6E59 /* UIColor+BButton.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+BButton.h"; sourceTree = "<group>"; };
-		4E11220217F991E3007D6E59 /* UIColor+BButton.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+BButton.m"; sourceTree = "<group>"; };
 		880EED30170B33B000462214 /* BButtonDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BButtonDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		880EED33170B33B000462214 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		880EED35170B33B000462214 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -79,8 +76,6 @@
 				4E1121FE17F991E3007D6E59 /* IcomoonFontIcons.h */,
 				4E1121FF17F991E3007D6E59 /* LICENSE.md */,
 				4E11220017F991E3007D6E59 /* README.md */,
-				4E11220117F991E3007D6E59 /* UIColor+BButton.h */,
-				4E11220217F991E3007D6E59 /* UIColor+BButton.m */,
 			);
 			path = BootstrapButton;
 			sourceTree = "<group>";
@@ -208,7 +203,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4E11220717F991E3007D6E59 /* UIColor+BButton.m in Sources */,
 				4E11220417F991E3007D6E59 /* BButton.m in Sources */,
 				880EED40170B33B000462214 /* main.m in Sources */,
 				4E11220317F991E3007D6E59 /* BBIconLabel.m in Sources */,
