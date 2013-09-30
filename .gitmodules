@@ -1,0 +1,3 @@
+[submodule "BootstrapButton"]
+	path = BootstrapButton
+	url = git@github.com:katzlbt/iOSBootstrapButton.git
