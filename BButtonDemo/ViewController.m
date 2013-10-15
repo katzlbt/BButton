@@ -163,4 +163,10 @@
     return title;
 }
 
+- (IBAction) radioClicked:sender;
+{
+    // dummy method to make radio buttons work (requires action sending)
+    NSLog(@"BRadioButton %i pressed!",[sender tag]);
+}
+
 @end

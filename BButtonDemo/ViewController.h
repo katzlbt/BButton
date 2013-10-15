@@ -14,4 +14,6 @@
 
 @interface ViewController : UIViewController
 
+- (IBAction) radioClicked:sender;
+
 @end

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F37" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="4510" systemVersion="12F45" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
-        <deployment defaultVersion="1280" identifier="iOS"/>
+        <deployment defaultVersion="1552" identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="3742"/>
     </dependencies>
     <scenes>
@@ -10,31 +10,24 @@
             <objects>
                 <viewController id="2" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Ojk-4j-lOT"/>
-                        <viewControllerLayoutGuide type="bottom" id="2AR-QM-X9e"/>
+                        <viewControllerLayoutGuide type="top" id="nlm-SK-muI"/>
+                        <viewControllerLayoutGuide type="bottom" id="mvY-IP-cRl"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="#Icon1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGY-hA-E0z" customClass="BBIconLabel">
-                                <rect key="frame" x="230" y="478" width="70" height="70"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" fixedFrame="YES" text="#Icon1" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NGY-hA-E0z" customClass="BBIconLabel">
+                                <rect key="frame" x="230" y="477" width="70" height="70"/>
                                 <color key="backgroundColor" red="1" green="0.95623903422160716" blue="0.8206218149029102" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="70" id="wuL-nc-XIz"/>
-                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.082352943720000002" green="0.47058826679999999" blue="0.89589608430000001" alpha="1" colorSpace="deviceRGB"/>
                                 <nil key="highlightedColor"/>
                                 <color key="shadowColor" red="0.7019608021" green="0.7019608021" blue="0.7019608021" alpha="1" colorSpace="calibratedRGB"/>
                                 <size key="shadowOffset" width="3" height="3"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQu-4O-YGj" customClass="BButton">
-                                <rect key="frame" x="230" y="424" width="70" height="46"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="70" id="QDt-xg-eri"/>
-                                    <constraint firstAttribute="height" constant="46" id="gyD-V0-YZH"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kQu-4O-YGj" customClass="BButton">
+                                <rect key="frame" x="230" y="420" width="70" height="47"/>
                                 <state key="normal" title="Red">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -44,21 +37,55 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ERQ-zM-dCv" customClass="BRadioButton">
+                                <rect key="frame" x="20" y="470" width="70" height="35"/>
+                                <state key="normal" title="Radio">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="radioClicked:" destination="2" eventType="touchUpInside" id="9BO-CQ-oG0"/>
+                                    <outlet property="toNextRadioButton" destination="xMu-CF-8cm" id="nXN-ty-AOc"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gfp-uO-2hY" customClass="BRadioButton">
+                                <rect key="frame" x="20" y="513" width="70" height="35"/>
+                                <state key="normal" title="Radio">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="radioClicked:" destination="2" eventType="touchUpInside" id="ena-de-TMw"/>
+                                    <outlet property="toNextRadioButton" destination="ERQ-zM-dCv" id="Cgi-LY-FXq"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" fixedFrame="YES" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xMu-CF-8cm" customClass="BRadioButton">
+                                <rect key="frame" x="98" y="470" width="70" height="35"/>
+                                <state key="normal" title="Radio">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="radioClicked:" destination="2" eventType="touchUpInside" id="fPi-C1-7it"/>
+                                    <outlet property="toNextRadioButton" destination="fde-tz-V1Y" id="ju0-hW-9lo"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fde-tz-V1Y" customClass="BRadioButton">
+                                <rect key="frame" x="98" y="513" width="70" height="35"/>
+                                <state key="normal" title="Radio">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="radioClicked:" destination="2" eventType="touchUpInside" id="Q3C-OL-TfO"/>
+                                    <outlet property="toNextRadioButton" destination="Gfp-uO-2hY" id="9AF-mz-u06"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="kQu-4O-YGj" secondAttribute="trailing" constant="20" symbolic="YES" id="R5d-lB-IWr"/>
-                            <constraint firstAttribute="trailing" secondItem="NGY-hA-E0z" secondAttribute="trailing" constant="20" symbolic="YES" id="Up9-5u-2dg"/>
-                            <constraint firstItem="NGY-hA-E0z" firstAttribute="leading" secondItem="kQu-4O-YGj" secondAttribute="leading" id="WY7-Ku-l3T"/>
-                            <constraint firstItem="NGY-hA-E0z" firstAttribute="top" secondItem="kQu-4O-YGj" secondAttribute="bottom" constant="8" symbolic="YES" id="rTR-GM-myI"/>
-                            <constraint firstAttribute="bottom" secondItem="NGY-hA-E0z" secondAttribute="bottom" constant="20" symbolic="YES" id="tl7-Qd-PKO"/>
-                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
             </objects>
         </scene>
     </scenes>
+    <color key="tintColor" red="0.0" green="0.18060645633244565" blue="1" alpha="1" colorSpace="calibratedRGB"/>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
