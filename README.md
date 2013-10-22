@@ -12,6 +12,8 @@ BButton is a subclass of UIButton that looks like the [Twitter Bootstrap 2.3.1](
 
     git submodule add git@github.com:katzlbt/iOSBootstrapButton.git BootstrapButton
 
+Then assign the BButton class to your custom buttons in storyboard.
+Optionally assign a "color" to the button in the storyboard with key-value coding. NO CODE NEEDED!
 XCode5 will ask you "Share working copy?" Answer: NO (not sure what this means though)
 
 #Using BootstrapButton in your project
