@@ -168,6 +168,11 @@
 			attributes = {
 				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Hexed Bits";
+				TargetAttributes = {
+					880EED2F170B33B000462214 = {
+						DevelopmentTeam = 5D57PK6N49;
+					};
+				};
 			};
 			buildConfigurationList = 880EED2B170B33B000462214 /* Build configuration list for PBXProject "BButtonDemo" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -308,15 +313,15 @@
 			buildSettings = {
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_RECEIVER_WEAK = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jesse Squires (64KYPKJ7RK)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jesse Squires (64KYPKJ7RK)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BButtonDemo/BButtonDemo-Prefix.pch";
 				INFOPLIST_FILE = "BButtonDemo/BButtonDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0D0EEA35-157A-4FFD-A4A2-5F4A52C12634";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0D0EEA35-157A-4FFD-A4A2-5F4A52C12634";
 				WRAPPER_EXTENSION = app;
 			};
@@ -327,15 +332,15 @@
 			buildSettings = {
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_OBJC_RECEIVER_WEAK = YES;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Jesse Squires (64KYPKJ7RK)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Jesse Squires (64KYPKJ7RK)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_INCREASE_PRECOMPILED_HEADER_SHARING = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BButtonDemo/BButtonDemo-Prefix.pch";
 				INFOPLIST_FILE = "BButtonDemo/BButtonDemo-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 6.1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "0D0EEA35-157A-4FFD-A4A2-5F4A52C12634";
+				PROVISIONING_PROFILE = "";
 				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "0D0EEA35-157A-4FFD-A4A2-5F4A52C12634";
 				WRAPPER_EXTENSION = app;
 			};
